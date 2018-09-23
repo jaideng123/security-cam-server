@@ -89,7 +89,7 @@ class Stream():
         camera = cv2.VideoCapture(Stream.video_source)
         try:
             camera.set(cv2.cv.CV_CAP_PROP_FPS, 10)
-            print(camera.get(cv2.cv.CV_CAP_PROP_FPS))
+            # print(camera.get(cv2.cv.CV_CAP_PROP_FPS))
         except:
             print('wrong version of cv2 to set fps')
         # print(str(camera.get(cv2.CAP_PROP_FRAME_WIDTH))+'x' +
