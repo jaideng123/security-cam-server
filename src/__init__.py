@@ -19,8 +19,10 @@ def gen(camera):
 
 @app.route('/video_feed')
 def video_feed():
-    return Response(gen(Stream()),
-                    mimetype='multipart/x-mixed-replace; boundary=frame')
+    res = Response(gen(Stream()),
+                   mimetype='multipart/x-mixed-replace; boundary=frame')
+    res.headers['Cache-Control'] = 'no-store'
+    return res
 
 
 if __name__ == '__main__':

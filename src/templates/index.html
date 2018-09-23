@@ -3,10 +3,16 @@
 <head>
     <base href="/">
     <title>TEST TEST</title>
+    <script>
+        setInterval(function () {
+            var img = document.getElementById('video-feed').src = "/video_feed#" + new Date().getMilliseconds;
+            console.log('refreshing image');
+        }, 15000)
+    </script>
 </head>
 
 <body>
-    <img src="/video_feed" />
+    <img id="video-feed" src="/video_feed" />
 </body>
 
 </html>
