@@ -87,8 +87,8 @@ class Stream():
     @staticmethod
     def frames():
         camera = cv2.VideoCapture(Stream.video_source)
-        camera.set(cv2.CAP_PROP_FPS, 10)
-        print(camera.get(cv2.CAP_PROP_FPS))
+        camera.set(cv2.cv.CV_CAP_PROP_FPS, 10)
+        print(camera.get(cv2.cv.CV_CAP_PROP_FPS))
         # print(str(camera.get(cv2.CAP_PROP_FRAME_WIDTH))+'x' +
         #       str(camera.get(cv2.CAP_PROP_FRAME_HEIGHT)))
         if not camera.isOpened():
