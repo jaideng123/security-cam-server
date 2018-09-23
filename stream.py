@@ -87,14 +87,15 @@ class Stream():
     @staticmethod
     def frames():
         camera = cv2.VideoCapture(Stream.video_source)
-        print(camera.get(cv2.CAP_PROP_FPS))
-        print(str(camera.get(cv2.CAP_PROP_FRAME_WIDTH))+'x' +
-              str(camera.get(cv2.CAP_PROP_FRAME_HEIGHT)))
+        # print(camera.get(cv2.CAP_PROP_FPS))
+        # print(str(camera.get(cv2.CAP_PROP_FRAME_WIDTH))+'x' +
+        #       str(camera.get(cv2.CAP_PROP_FRAME_HEIGHT)))
         if not camera.isOpened():
             raise RuntimeError('Could not start camera.')
         while True:
             # read current frame
             _, img = camera.read()
+            print(img)
             # encode as a jpeg image and return it
             yield cv2.imencode('.jpg', img)[1].tobytes()
 
