@@ -92,6 +92,7 @@ class Stream():
         #       str(camera.get(cv2.CAP_PROP_FRAME_HEIGHT)))
         if not camera.isOpened():
             raise RuntimeError('Could not start camera.')
+
         while True:
             # read current frame
             _, img = camera.read()
