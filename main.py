@@ -1,5 +1,4 @@
 from flask import Flask, render_template, Response
-from camera import VideoCamera
 from stream import Stream
 
 app = Flask(__name__)

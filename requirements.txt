@@ -1,0 +1,4 @@
+MyApp
+numpy
+opencv-python
+flask
