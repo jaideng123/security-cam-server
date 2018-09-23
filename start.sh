@@ -1,2 +1,2 @@
-gunicorn -w 1 main:startApp
+gunicorn -w 1 src:app
 
