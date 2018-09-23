@@ -2,7 +2,7 @@ from flask import Flask, render_template, Response
 from stream import Stream
 
 
-def startApp():
+def startApp(environ, start_response):
     app = Flask(__name__)
 
     @app.route('/')
@@ -24,4 +24,4 @@ def startApp():
         app.run(host='localhost', threaded=True)
 
 
-startApp()
+startApp({}, {})
