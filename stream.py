@@ -95,7 +95,6 @@ class Stream():
         while True:
             # read current frame
             _, img = camera.read()
-            print(img)
             # encode as a jpeg image and return it
             yield cv2.imencode('.jpg', img)[1].tobytes()
 
