@@ -1,7 +1,7 @@
 import cv2
 import sys
 
-camera = cv2.VideoCapture(1)
+camera = cv2.VideoCapture(0)
 try:
     camera.set(cv2.cv.CV_CAP_PROP_FPS, 10)
 except:
