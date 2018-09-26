@@ -7,6 +7,9 @@ try:
 except:
     camera.set(cv2.CAP_PROP_FPS, 10)
 
+camera.set(3, 1280)
+camera.set(4, 720)
+
 while True:
     # read current frame
     _, img = camera.read()
