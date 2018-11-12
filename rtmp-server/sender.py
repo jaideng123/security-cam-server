@@ -20,27 +20,48 @@ ffargs = [
     'rtmp://a.rtmp.youtube.com/live2/'+os.environ['YOUTUBEKEY']
 ]
 
-from flask import Flask, render_template, Response
+from flask import Flask, render_template, send_from_directory, Response
+from flask_cors import CORS, cross_origin
 
 
 app = Flask(__name__)
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 running = False
 
 
+@app.route('/js/<path:path>')
+def send_js(path):
+    return send_from_directory('js', path)
+
+
+@app.route('/css/<path:path>')
+def send_css(path):
+    return send_from_directory('css', path)
+
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+
 @app.route('/off')
+@cross_origin()
 def off():
     stopStream()
     return 'OFF'
 
 
 @app.route('/on')
+@cross_origin()
 def on():
     startStream()
     return 'ON'
 
 
 @app.route('/status')
+@cross_origin()
 def status():
     global running
     if(running):

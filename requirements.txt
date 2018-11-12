@@ -2,3 +2,4 @@ MyApp
 numpy
 opencv-python
 flask
+flask-cors

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/foundation.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Gerig-Cam Remote</title>
+</head>
+
+<body>
+    <div class="grid-container">
+        <h1 class="main-header">Gerig-Cam Remote</h1>
+        <div class="status-display">
+            <span class="status-label">
+                Status:
+            </span>
+            <span class="status-indicator" id="status-indicator"></span>
+        </div>
+        <div class="controls">
+            <div class="btn-container">
+                <button class="btn button success btn__on" id="on-btn" onclick="SetOn().then(DisplayStatus);">On</button>
+            </div>
+            <div class="btn-container">
+                <button class="btn button alert btn__off" id="off-btn" onclick="SetOff().then(DisplayStatus);">Off</button>
+            </div>
+        </div>
+    </div>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
