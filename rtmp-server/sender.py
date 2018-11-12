@@ -95,8 +95,8 @@ def streamVideo():
     start = current_milli_time()
     while running:
         # See if this fixed timing issues
-        if(current_milli_time() - start < 167):
-            continue
+        # if(current_milli_time() - start < 167):
+        #     continue
 
         # read current frame
         _, img = camera.read()
