@@ -3,6 +3,7 @@ import sys
 import subprocess
 import os
 import thread
+import time
 
 ffargs = [
     'ffmpeg',
@@ -78,6 +79,9 @@ def stopStream():
     return True
 
 
+def current_milli_time(): return int(round(time.time() * 1000))
+
+
 def streamVideo():
     camera = cv2.VideoCapture(0)
     try:
@@ -88,7 +92,12 @@ def streamVideo():
     camera.set(3, 1280)
     camera.set(4, 720)
     ffmpeg = subprocess.Popen(args=ffargs, stdin=subprocess.PIPE)
+    start = current_milli_time()
     while running:
+        # See if this fixed timing issues
+        if(current_milli_time() - start < 167):
+            continue
+
         # read current frame
         _, img = camera.read()
         # encode as a jpeg image and return it
