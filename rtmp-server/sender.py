@@ -103,6 +103,7 @@ def streamVideo():
         # encode as a jpeg image and return it
         # sys.stdout.write(cv2.imencode('.jpg', img)[1].tobytes())
         ffmpeg.stdin.write(img)
+        start = current_milli_time()
     ffmpeg.kill()
     camera.release()
     cv2.destroyAllWindows()
