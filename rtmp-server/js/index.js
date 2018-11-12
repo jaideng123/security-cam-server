@@ -1,9 +1,10 @@
 console.log("Loaded");
+const baseUrl = "http://76.183.120.203/";
 
 FetchStatus().then(DisplayStatus);
 
 function FetchStatus() {
-  return fetch("http://localhost:5000/status").then(res => {
+  return fetch(baseUrl + "status").then(res => {
     console.log(res);
     return res.text();
   });
@@ -14,13 +15,13 @@ function DisplayStatus(status) {
 }
 
 function SetOn() {
-  return fetch("http://localhost:5000/on").then(res => {
+  return fetch(baseUrl + "on").then(res => {
     return res.text();
   });
 }
 
 function SetOff() {
-  return fetch("http://localhost:5000/off").then(res => {
+  return fetch(baseUrl + "off").then(res => {
     return res.text();
   });
 }
